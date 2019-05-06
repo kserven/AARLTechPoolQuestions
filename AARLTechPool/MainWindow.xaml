@@ -11,21 +11,25 @@
         <TextBox x:Name="Question" Margin="10,30" Text="Question"></TextBox>
         <ListView Margin ="10,0">
             <ListViewItem>
-                <Button x:Name="AButton" HorizontalContentAlignment="Left" Width="710" Margin="0" Content="A"/>
+                <Button x:Name="AButton" HorizontalContentAlignment="Left" Width="710" Margin="0" 
+                        PreviewMouseLeftButtonDown="AButton_OnPreviewMouseLeftButtonDown" Content="A"/>
             </ListViewItem>
             <ListViewItem>
-                <Button x:Name="BButton" HorizontalContentAlignment="Left" Width="710" Margin="0" Content="B"/>
+                <Button x:Name="BButton" HorizontalContentAlignment="Left" Width="710" Margin="0" 
+                        PreviewMouseLeftButtonDown="BButton_OnPreviewMouseLeftButtonDown" Content="B"/>
             </ListViewItem>
             <ListViewItem>
-                <Button x:Name="CButton" HorizontalContentAlignment="Left" Width="710" Margin="0" Content="C"/>
+                <Button x:Name="CButton" HorizontalContentAlignment="Left" Width="710" Margin="0" 
+                        PreviewMouseLeftButtonDown="CButton_OnPreviewMouseLeftButtonDown" Content="C"/>
             </ListViewItem>
             <ListViewItem>
-                <Button x:Name="DButton" HorizontalContentAlignment="Left" Width="710" Margin="0" Content="D"/>
+                <Button x:Name="DButton" HorizontalContentAlignment="Left" Width="710" Margin="0" 
+                        PreviewMouseLeftButtonDown="DButton_OnPreviewMouseLeftButtonDown" Content="D"/>
             </ListViewItem>
         </ListView>
 
-        <TextBlock x:Name="Info"  Margin="10,20" TextAlignment="Center">Correct!</TextBlock>
-        <TextBlock x:Name="CorrectAnswer" Margin="20,0,20,20" TextAlignment="Center">The Correct answer was C.</TextBlock>
+        <TextBlock x:Name="CorrectAnswer"  Margin="10,20" TextAlignment="Center">Correct!</TextBlock>
+        <TextBlock x:Name="Info" Margin="20,0,20,20" TextAlignment="Center">The Correct answer was C.</TextBlock>
         <Button x:Name="NextButton" Width="100" PreviewMouseLeftButtonDown="NextButton_OnPreviewMouseLeftButtonDown">Next Question</Button>
 </StackPanel>
 

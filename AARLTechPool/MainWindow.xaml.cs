@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace AARLTechPool
 {
@@ -12,6 +13,7 @@ namespace AARLTechPool
     /// </summary>
     internal partial class MainWindow
     {
+        private int _numberCorrect;
         private int _questionNumber;
 
         private readonly List<Question> _questions = new List<Question>();
@@ -74,17 +76,68 @@ namespace AARLTechPool
 
         private void DisplayInformation()
         {
-            Id.Text = $"{_questionNumber + 1} - {_questions[_questionNumber].Id}";
+            Id.Text = _questions[_questionNumber].Id;
 
             Question.Text = _questions[_questionNumber].QuestionText;
+
+            AButton.Background = Brushes.LightGray;
+            BButton.Background = Brushes.LightGray;
+            CButton.Background = Brushes.LightGray;
+            DButton.Background = Brushes.LightGray;
 
             AButton.Content = _questions[_questionNumber].A;
             BButton.Content = _questions[_questionNumber].B;
             CButton.Content = _questions[_questionNumber].C;
             DButton.Content = _questions[_questionNumber].D;
 
-            CorrectAnswer.Text = _questions[_questionNumber].Answer;
+            CorrectAnswer.Text = "";
             Info.Text = _questions[_questionNumber].Meta;
+        }
+
+        private void CheckAnswer(string answer)
+        {
+            if (answer.Equals(_questions[_questionNumber].Answer))
+            {
+                CorrectAnswer.Text = answer + " is correct!";
+                _numberCorrect++;
+                Info.Text = _numberCorrect.ToString() + " correct so far out of " + _questions.Count.ToString();
+
+                switch (answer)
+                {
+                    case "A":
+                        AButton.Background = Brushes.LawnGreen;
+                        break;
+                    case "B":
+                        BButton.Background = Brushes.LawnGreen;
+                        break;
+                    case "C":
+                        CButton.Background = Brushes.LawnGreen;
+                        break;
+                    case "D":
+                        DButton.Background = Brushes.LawnGreen;
+                        break;
+                }
+            }
+            else
+            {
+                CorrectAnswer.Text = answer + " is not correct. Sorry!";
+
+                switch (answer)
+                {
+                    case "A":
+                        AButton.Background = Brushes.LightCoral;
+                        break;
+                    case "B":
+                        BButton.Background = Brushes.LightCoral;
+                        break;
+                    case "C":
+                        CButton.Background = Brushes.LightCoral;
+                        break;
+                    case "D":
+                        DButton.Background = Brushes.LightCoral;
+                        break;
+                }
+            }
         }
 
         private void NextButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -94,6 +147,26 @@ namespace AARLTechPool
 
                 DisplayInformation();
 
+        }
+
+        private void AButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            CheckAnswer("A");
+        }
+
+        private void BButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            CheckAnswer("B");
+        }
+
+        private void CButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            CheckAnswer("C");
+        }
+
+        private void DButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            CheckAnswer("D");
         }
     }
 }
