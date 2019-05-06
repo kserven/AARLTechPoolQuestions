@@ -1,0 +1,30 @@
+﻿<Window x:Class="AARLTechPool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AARLTechPool"
+        mc:Ignorable="d"
+        Title="AARL Tech Pool Questions Flash - Keith A. Serven" Height="450" Width="800">
+    <StackPanel>
+        <TextBox TextAlignment="Center" Margin ="20,20,20,0" Foreground="Yellow" Background ="Blue">T1A01</TextBox>
+
+        <TextBox Margin="20">Which of the following is a purpose of the Amateur Radio Service as stated in the FCC rules and regulations?</TextBox>
+        <ListView Margin ="20,0">
+            <ListViewItem>A. Providing personal radio communications for as many citizens as possible</ListViewItem>
+            <ListViewItem>B. Providing communications for international non-profit organizations</ListViewItem>
+            <ListViewItem>C. Advancing skills in the technical and communication phases of the radio art</ListViewItem>
+            <ListViewItem>D. All of these choices are correct</ListViewItem>
+        </ListView>
+
+        <Button Margin="0,10,0,0" Width ="100" Content="A"/>
+        <Button Margin="0,10,0,0" Width ="100" Content="B"/>
+        <Button Margin="0,10,0,0" Width ="100" Content="C"/>
+        <Button Margin="0,10,0,0" Width ="100" Content="D"/>
+
+        <TextBlock Margin="20,20,20,10" TextAlignment="Center">Correct!</TextBlock>
+        <TextBlock Margin="20,0,20,10" TextAlignment="Center">The Correct answer was C.</TextBlock>
+        <Button Width="100" >Next Question</Button>
+</StackPanel>
+
+</Window>
