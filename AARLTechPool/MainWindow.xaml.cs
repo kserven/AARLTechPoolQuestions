@@ -28,9 +28,13 @@ namespace AARLTechPool
 
 
             questions.Add(question);
-            questions.Add(question);
 
-            Console.WriteLine(questions[0].Id);
+            Id.Text = questions[0].Id;
+            Question.Text = questions[0].QuestionText;
+            AButton.Content = questions[0].A;
+            BButton.Content = questions[0].B;
+            CButton.Content = questions[0].C;
+            DButton.Content = questions[0].D;
         }
     }
 }
