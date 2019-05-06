@@ -34,7 +34,7 @@ T1A05 (C) [97.7]
 What is proof of possession of an FCC-issued operator/primary license grant?
 A. A printed operator/primary station license issued by the FCC must be displayed at the transmitter site
 B. The control operator must have an operator/primary station license in his or her possession when in control of a transmitter
-C. The control operator's operator/primary station license must appear in the FCC ULS consolidated licensee database
+C. The control operators operator/primary station license must appear in the FCC ULS consolidated licensee database
 D. All of these choices are correct
 ~~
 
@@ -50,7 +50,7 @@ T1A07 (C) [97.3(a)(41)]
 What is the FCC Part 97 definition of a space station?
 A. Any satellite orbiting the earth
 B. A manned satellite orbiting the earth
-C. An amateur station located more than 50 km above the Earth's surface
+C. An amateur station located more than 50 km above the Earths surface
 D. An amateur station using amateur radio satellites for relay of signals
 ~~
 
@@ -98,7 +98,7 @@ T1B02 (B) [97.301, 97.207(c)]
 Which amateur radio stations may make contact with an amateur radio station on the International Space Station (ISS) using 2 meter and 70 cm band frequencies?
 A. Only members of amateur radio clubs at NASA facilities
 B. Any amateur holding a Technician or higher-class license
-C. Only the astronaut's family members who are hams
+C. Only the astronauts family members who are hams
 D. Contacts with the ISS are not permitted on amateur radio frequencies
 ~~
 
@@ -329,7 +329,7 @@ D. Earth, repeater, or space stations
 
 T1D08 (B) [97.113(a)(3)(iii)]
 In which of the following circumstances may the control operator of an amateur station receive compensation for operating that station? 
-A. When the communication is related to the sale of amateur equipment by the control operator's employer
+A. When the communication is related to the sale of amateur equipment by the control operators employer
 B. When the communication is incidental to classroom instruction at an educational institution
 C. When the communication is made to obtain emergency information for a local broadcast station
 D. All of these choices are correct
@@ -561,10 +561,10 @@ D. Plus or minus 1 MHz
 ~~
 
 T2A04 (B)
-What is an appropriate way to call another station on a repeater if you know the other station's call sign?
-A. Say "break, break," then say the station's call sign
-B. Say the station's call sign, then identify with your call sign
-C. Say "CQ" three times, then the other station's call sign
+What is an appropriate way to call another station on a repeater if you know the other stations call sign?
+A. Say "break, break," then say the stations call sign
+B. Say the stations call sign, then identify with your call sign
+C. Say "CQ" three times, then the other stations call sign
 D. Wait for the station to call CQ, then answer it
 ~~
 
@@ -796,7 +796,7 @@ D. Play a pre-recorded emergency alert tone followed by your call sign
 T2C07 (C)
 Which of the following is an accepted practice for an amateur operator who has checked into a net?
 A. Provided that the frequency is quiet, announce the station call sign and location every 5 minutes
-B. Move 5 kHz away from the net's frequency and use high power to ask other hams to keep clear of the net frequency
+B. Move 5 kHz away from the nets frequency and use high power to ask other hams to keep clear of the net frequency
 C. Remain on frequency without transmitting until asked to do so by the net control station
 D. All of these choices are correct 
 ~~
@@ -1158,7 +1158,7 @@ D. PCI or SDI
 T4A05 (A)
 What is the proper location for an external SWR meter?
 A. In series with the feed line, between the transmitter and antenna
-B. In series with the station's ground
+B. In series with the stations ground
 C. In parallel with the push-to-talk line and the antenna
 D. In series with the power supply cable, as close as possible to the radio
 ~~
@@ -1175,7 +1175,7 @@ T4A07 (C)
 How is a computer’s sound card used when conducting digital communications?
 A. The sound card communicates between the computer CPU and the video display
 B. The sound card records the audio frequency for video display
-C. The sound card provides audio to the radio's microphone input and converts received audio to digital form
+C. The sound card provides audio to the radios microphone input and converts received audio to digital form
 D. All of these choices are correct
 ~~
 
@@ -1205,7 +1205,7 @@ D. Anti-lock braking system controllers
 ~~
 
 T4A11 (A)
-Where should the negative return connection of a mobile transceiver's power cable be connected?
+Where should the negative return connection of a mobile transceivers power cable be connected?
 A. At the battery or engine block ground strap
 B. At the antenna mount
 C. To any metal part of the vehicle
@@ -1942,7 +1942,7 @@ D. Resistor
 ~~
 
 T6B11 (A)
-What is the term that describes a device's ability to amplify a signal?
+What is the term that describes a devices ability to amplify a signal?
 A. Gain
 B. Forward resistance
 C. Forward voltage drop
@@ -2234,9 +2234,9 @@ D. All of these choices are correct
 T7A11 (A)
 Where is an RF preamplifier installed?
 A. Between the antenna and receiver
-B. At the output of the transmitter's power amplifier
+B. At the output of the transmitters power amplifier
 C. Between a transmitter and antenna tuner
-D. At the receiver's audio output
+D. At the receivers audio output
 ~~
 
 T7B01 (D)
@@ -2929,7 +2929,7 @@ D. Strengthening the radiating elements of a beam antenna to better resist wind 
 ~~
 
 T9A03 (B)
-Which of the following describes a simple dipole oriented parallel to the Earth's surface?
+Which of the following describes a simple dipole oriented parallel to the Earths surface?
 A. A ground-wave antenna
 B. A horizontally polarized antenna
 C. A rhombic antenna
@@ -3038,7 +3038,7 @@ D. It is less expensive than any other type of feed line
 
 T9B04 (A)
 What is the major function of an antenna tuner (antenna coupler)?
-A. It matches the antenna system impedance to the transceiver's output impedance
+A. It matches the antenna system impedance to the transceivers output impedance
 B. It helps a receiver automatically tune in weak stations
 C. It allows an antenna to be used on both transmit and receive
 D. It automatically selects the proper antenna for the frequency band being used

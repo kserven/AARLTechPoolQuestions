@@ -26,7 +26,7 @@
 
         <TextBlock x:Name="Info"  Margin="10" TextAlignment="Center">Correct!</TextBlock>
         <TextBlock x:Name="CorrectAnswer" Margin="20,0,20,10" TextAlignment="Center">The Correct answer was C.</TextBlock>
-        <Button x:Name="NextButton" Width="100" >Next Question</Button>
+        <Button x:Name="NextButton" Width="100" PreviewMouseLeftButtonDown="NextButton_OnPreviewMouseLeftButtonDown">Next Question</Button>
 </StackPanel>
 
 </Window>

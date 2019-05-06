@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows;
+using System.Windows.Input;
 
 namespace AARLTechPool
 {
@@ -8,33 +11,65 @@ namespace AARLTechPool
     /// </summary>
     internal partial class MainWindow
     {
+        private int _questionNumber = 420;
+
+        private List<Question> _questions = new List<Question>();
         public MainWindow()
         {
+            ResizeMode = ResizeMode.CanMinimize;
+
             InitializeComponent();
-            var questions = new List<Question>();
 
-            var question = new Question
+            ReadQuestionsFromFile();
+        }
+
+        private void ReadQuestionsFromFile()
+        {
+            using (var file = new StreamReader(@"TechPool.txt"))
             {
-                Id = "T1A01",
-                Answer = "C",
-                Meta = "97.1",
-                QuestionText =
-                    "Which of the following is a purpose of the Amateur Radio Service as stated in the FCC rules and regulations?",
-                A = "A. Providing personal radio communications for as many citizens as possible",
-                B = "B. Providing communications for international non-profit organizations",
-                C = "C. Advancing skills in the technical and communication phases of the radio art",
-                D = "D. All of these choices are correct"
-            };
+                while(!file.EndOfStream)
+                {
+                    var question = new Question
+                    {
+                        Id = file.ReadLine() ?? throw new InvalidOperationException(),
+                        QuestionText = file.ReadLine() ?? throw new InvalidOperationException(),
+                        A = file.ReadLine(),
+                        B = file.ReadLine(),
+                        C = file.ReadLine(),
+                        D = file.ReadLine()
+                    };
 
+                    file.ReadLine();
+                    file.ReadLine();
 
-            questions.Add(question);
+                    _questions.Add(question);
+                }
+            }
 
-            Id.Text = questions[0].Id;
-            Question.Text = questions[0].QuestionText;
-            AButton.Content = questions[0].A;
-            BButton.Content = questions[0].B;
-            CButton.Content = questions[0].C;
-            DButton.Content = questions[0].D;
+            Id.Text = $"{_questions.Count} - {_questionNumber + 1} - {_questions[_questionNumber].Id}";
+
+            Question.Text = _questions[_questionNumber].QuestionText;
+
+            AButton.Content = _questions[_questionNumber].A;
+            BButton.Content = _questions[_questionNumber].B;
+            CButton.Content = _questions[_questionNumber].C;
+            DButton.Content = _questions[_questionNumber].D;
+        }
+
+        private void NextButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+                _questionNumber++;
+                if (_questionNumber >= _questions.Count - 1) return;
+
+                Id.Text = $"{_questionNumber + 1} - {_questions[_questionNumber].Id}";
+
+                Question.Text = _questions[_questionNumber].QuestionText;
+
+                AButton.Content = _questions[_questionNumber].A;
+                BButton.Content = _questions[_questionNumber].B;
+                CButton.Content = _questions[_questionNumber].C;
+                DButton.Content = _questions[_questionNumber].D;
+
         }
     }
 }
