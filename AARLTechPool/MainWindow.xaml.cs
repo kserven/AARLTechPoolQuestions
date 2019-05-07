@@ -142,7 +142,10 @@ namespace AARLTechPool
 
         private void NextButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-                _questionNumber++;
+                _questions.RemoveAt(_questionNumber);
+
+                _questionNumber = new Random().Next(0,_questions.Count+1);
+
                 if (_questionNumber >= _questions.Count) return;
 
                 DisplayInformation();
