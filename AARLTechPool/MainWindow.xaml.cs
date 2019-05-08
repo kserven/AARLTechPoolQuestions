@@ -25,6 +25,8 @@ namespace AARLTechPool
 
             ReadQuestionsFromFile();
 
+            _questionNumber = new Random().Next(0, _questions.Count);
+
             DisplayInformation();
         }
 
@@ -36,12 +38,14 @@ namespace AARLTechPool
                 throw new InvalidOperationException();
             }
 
+            //string questionsData = global::AARLTechPool.Properties.Resources.TechPool;
             string appPath = Path.GetDirectoryName(processModule.FileName);
             string filePath = Path.Combine(appPath ?? throw new InvalidOperationException(), "Resources");
             string fullFilename = Path.Combine(filePath, "TechPool.txt");
 
             using (var file = new StreamReader(fullFilename))
             {
+
                 while(!file.EndOfStream)
                 {
                     var question = new Question
@@ -57,6 +61,7 @@ namespace AARLTechPool
                     question.Answer = question.Id[7].ToString();
 
                     var meta = new StringBuilder();
+
                     for (var i = 10; i < question.Id.Length; i++)
                     {
                         meta.Append(question.Id[i].ToString());                        
@@ -84,6 +89,7 @@ namespace AARLTechPool
             BButton.Background = Brushes.LightGray;
             CButton.Background = Brushes.LightGray;
             DButton.Background = Brushes.LightGray;
+            
 
             AButton.Content = _questions[_questionNumber].A;
             BButton.Content = _questions[_questionNumber].B;
@@ -144,7 +150,7 @@ namespace AARLTechPool
         {
                 _questions.RemoveAt(_questionNumber);
 
-                _questionNumber = new Random().Next(0,_questions.Count+1);
+                _questionNumber = new Random().Next(0,_questions.Count);
 
                 if (_questionNumber >= _questions.Count) return;
 

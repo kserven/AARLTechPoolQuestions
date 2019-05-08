@@ -8,7 +8,7 @@
     <StackPanel Margin="20" Background="AliceBlue">
         <TextBox x:Name="Id" TextAlignment="Center" Margin ="10, 20,10,0" Foreground="Yellow" Background ="Blue" Text="Id"/>
 
-        <TextBox x:Name="Question" Margin="10,30" Text="Question"></TextBox>
+        <TextBox x:Name="Question" Margin="10,30" Height ="40" TextWrapping="Wrap" Text="Question"></TextBox>
         <ListView Margin ="10,0">
             <ListViewItem>
                 <Button x:Name="AButton" HorizontalContentAlignment="Left" Width="710" Margin="0" 
