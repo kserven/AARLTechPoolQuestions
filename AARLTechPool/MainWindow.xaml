@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="AARL Tech Pool Questions Flash - Keith A. Serven" Height="450" Width="800" x:ClassModifier="internal">
+        Title="AARL Tech Pool Questions Flash - Keith A. Serven" Height="600" Width="800" x:ClassModifier="internal">
     <StackPanel Margin="20" Background="AliceBlue">
         <TextBox x:Name="Id" TextAlignment="Center" Margin ="10, 20,10,0" Foreground="Yellow" Background ="Blue" Text="Id"/>
 
@@ -27,10 +27,24 @@
                         PreviewMouseLeftButtonDown="DButton_OnPreviewMouseLeftButtonDown" Content="D"/>
             </ListViewItem>
         </ListView>
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
 
-        <TextBlock x:Name="CorrectAnswer"  Margin="10,20" TextAlignment="Center">Correct!</TextBlock>
-        <TextBlock x:Name="Info" Margin="20,0,20,20" TextAlignment="Center">The Correct answer was C.</TextBlock>
-        <Button x:Name="NextButton" Width="100" PreviewMouseLeftButtonDown="NextButton_OnPreviewMouseLeftButtonDown">Next Question</Button>
-</StackPanel>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="CorrectAnswer" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" TextAlignment="Center">Correct!</TextBlock>
+            <TextBlock x:Name="Info" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" TextAlignment="Center">The Correct answer was C.</TextBlock>
+            <Button x:Name="NextButton" Grid.Column="0" Grid.Row="2" Height="30" Width="100" PreviewMouseLeftButtonDown="NextButton_OnPreviewMouseLeftButtonDown">Next Question</Button>
+            <Image x:Name="SupplementalImage" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" 
+                   Height="225" MaxHeight="225"  Stretch="Uniform"></Image>
+        </Grid>
+    </StackPanel>
 
 </Window>

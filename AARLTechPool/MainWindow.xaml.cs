@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace AARLTechPool
 {
@@ -38,12 +39,9 @@ namespace AARLTechPool
                 throw new InvalidOperationException();
             }
 
-            //string questionsData = global::AARLTechPool.Properties.Resources.TechPool;
-            string appPath = Path.GetDirectoryName(processModule.FileName);
-            string filePath = Path.Combine(appPath ?? throw new InvalidOperationException(), "Resources");
-            string fullFilename = Path.Combine(filePath, "TechPool.txt");
+            var stream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.TechPool));
 
-            using (var file = new StreamReader(fullFilename))
+            using (var file = new StreamReader(stream))
             {
 
                 while(!file.EndOfStream)
@@ -98,6 +96,32 @@ namespace AARLTechPool
 
             CorrectAnswer.Text = "";
             Info.Text = _questions[_questionNumber].Meta;
+
+            var t1 = new[] { "T6C02", "T6C03", "T6C04", "T6C05" };
+            var t2 = new[] { "T6C06", "T6C07", "T6C08", "T6C09" };
+            var t3 = new[] { "T6C10", "T6C11" };
+
+            var path = @"C:\Users\kserv\source\repos\AARLTechPool\AARLTechPool\Resources\";
+
+            if (Array.IndexOf( t1 , _questions[_questionNumber].Id) > -1)
+            {
+                SupplementalImage.Source = new BitmapImage(new Uri(@path + "T1.jpg", UriKind.Absolute));
+            }
+
+            else if (Array.IndexOf(t2, _questions[_questionNumber].Id) > -1)
+            {
+                SupplementalImage.Source = new BitmapImage(new Uri(@path + "T2.jpg", UriKind.Absolute));
+            }
+
+            else if (Array.IndexOf(t3, _questions[_questionNumber].Id) > -1)
+            {
+                SupplementalImage.Source = new BitmapImage(new Uri(@path + "T3.jpg", UriKind.Absolute));
+            }
+            else
+            {
+                SupplementalImage.Source = null;
+            }
+
         }
 
         private void CheckAnswer(string answer)
@@ -148,14 +172,19 @@ namespace AARLTechPool
 
         private void NextButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-                _questions.RemoveAt(_questionNumber);
+            if (_questions.Count == 0)
+            {
+                MessageBox.Show("You have reached the end of the questions");
+                return;
+            }
 
-                _questionNumber = new Random().Next(0,_questions.Count);
+            _questions.RemoveAt(_questionNumber);
 
-                if (_questionNumber >= _questions.Count) return;
+            _questionNumber = new Random().Next(0, _questions.Count);
 
-                DisplayInformation();
+            if (_questionNumber >= _questions.Count) return;
 
+            DisplayInformation();
         }
 
         private void AButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
